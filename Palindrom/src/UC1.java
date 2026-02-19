@@ -1,20 +1,16 @@
+import java.util.Stack;
 public class UC1 {
     static void main() {
-                String input = "deified";
-                char[] charArray = input.toCharArray();
-                boolean isPalindrome = true;
-                int left = 0;
-                int right = charArray.length - 1;
-                while (left < right) {
-
-                    if (charArray[left] != charArray[right]) {
-                        isPalindrome = false;
-                        break;
-                    }
-                    left++;
-                    right--;
+                String input = "noon";
+                Stack<Character> stack = new Stack<>();
+                for (int i = 0; i < input.length(); i++) {
+                    stack.push(input.charAt(i));
                 }
-                if (isPalindrome) {
+                String reversed = "";
+                while (!stack.isEmpty()) {
+                    reversed += stack.pop();
+                }
+                if (input.equals(reversed)) {
                     System.out.println("'" + input + "' is a palindrome.");
                 } else {
                     System.out.println("'" + input + "' is not a palindrome.");
