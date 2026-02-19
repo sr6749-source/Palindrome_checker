@@ -1,18 +1,26 @@
 public class UC1 {
     static void main() {
-                String original = "racecar";
-                String reversed = ""; // Initializing an empty string to hold the result
+                String input = "deified";
+                char[] charArray = input.toCharArray();
+                boolean isPalindrome = true;
+                int left = 0;
+                int right = charArray.length - 1;
+                while (left < right) {
 
-                for (int i = original.length() - 1; i >= 0; i--) {
-
-                    reversed = reversed + original.charAt(i);
+                    if (charArray[left] != charArray[right]) {
+                        isPalindrome = false;
+                        break;
+                    }
+                    left++;
+                    right--;
                 }
-
-                if (original.equals(reversed)) {
-                    System.out.println(original + " is a palindrome.");
+                if (isPalindrome) {
+                    System.out.println("'" + input + "' is a palindrome.");
                 } else {
-                    System.out.println(original + " is not a palindrome.");
+                    System.out.println("'" + input + "' is not a palindrome.");
                 }
             }
         }
+
+
 
