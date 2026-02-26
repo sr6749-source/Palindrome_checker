@@ -1,4 +1,6 @@
 import java.util.Stack;
+import java.util.Queue;
+import java.util.LinkedList;
 public class UC1 {
     static void main() {
         String input = "civic";
