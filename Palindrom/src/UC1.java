@@ -1,25 +1,22 @@
-import java.util.Stack;
-import java.util.Queue;
-import java.util.LinkedList;
+import java.util.ArrayDeque;
+import java.util.Deque;
 public class UC1 {
     static void main() {
-        String input = "civic";
-
-        Queue<Character> queue = new LinkedList<>();
-        Stack<Character> stack = new Stack<>();
-        for (char c : input.toCharArray()) {
-            queue.add(c);
-            stack.push(c);
-        }
-        boolean isPalindrome = true;
-
-        while (!queue.isEmpty()) {
-            if (!queue.remove().equals(stack.pop())) {
-                isPalindrome = false;
-                break;
+                String input = "refer";
+                System.out.println("Input : " + input);
+                Deque<Character> deque = new ArrayDeque<>();
+                for (char c : input.toCharArray()) {
+                    deque.addLast(c);
+                }
+                boolean isPalindrome = true;
+                while (deque.size() > 1) {
+                    char first = deque.removeFirst();
+                    char last = deque.removeLast();
+                    if (first != last) {
+                        isPalindrome = false;
+                        break;
+                    }
+                }
+                System.out.println("Is Palindrome? : " + isPalindrome);
             }
         }
-        System.out.println("Input : " + input);
-        System.out.println("Is Palindrome? : " + isPalindrome);
-    }
-}
